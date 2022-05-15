@@ -1,0 +1,1098 @@
+Program Pzim ;
+uses
+crt;
+   
+                                        
+//PROCEDIMENTO MENU
+procedure menu();
+var
+barra:array[1..50] of string;
+contador_barra:integer;
+begin
+  textcolor(12);
+  gotoxy (19,4);
+  writeln ('   __  ____________  ________   __  ___________');
+  gotoxy (19,5);
+  writeln('  /  |/  / __/ ___/ / ___/ _ | /  |/  / __/ __/');
+  gotoxy (19,6);
+  writeln(' / /|_/ / _// /__  / (_ / __ |/ /|_/ / _/_\ \');
+  gotoxy (19,7);
+  writeln('/_/  /_/___/\___/  \___/_/ |_/_/  /_/___/___/');
+  
+  
+  
+  
+  
+  gotoxy(23,9);
+  writeln('****************************************');
+  gotoxy(23,10);
+  writeln('*          1-Jogo da velha             *');
+  gotoxy(23,11);
+  writeln('*          2-Quiz                      *');
+  gotoxy(23,12);
+  writeln('*          3-Sair                      *');
+  gotoxy(23,13);
+  writeln('****************************************');
+  gotoxy (15,25);
+  textcolor (lightcyan);
+  writeln ('Desenvolvedores: Jeferson Conceição / Flávio Lima / Felipe Faustino / Alfredo Victor ');
+  
+  gotoxy(23,14);
+  textcolor (10);
+  write('Opção: ');
+  
+  
+end;
+
+procedure nivelbaixo (var score:integer);
+begin
+  clrscr;
+  
+
+  gotoxy (45,10);
+  writeln  ('#    FIM DE JOGO     #');
+  gotoxy (45,11);
+  writeln ('SUA PONTUAÇÃO FOI: ',score);
+  gotoxy(33,14);
+  writeln  ('SEU NIVEL TEORICO ESTÁ MEIO LIMITADO, ESTUDE MAIS!');
+  gotoxy (33,16);
+  writeln (' Recomendamos : https://becode.com.br/ ');
+  
+  textcolor(white);
+   gotoxy (29,21);
+   delay(100);
+writeln('                                            ``...---...```                           ');
+gotoxy (19,22);
+writeln ('                                  ``.-://///////////////::-.`                       ');  
+ delay(250);
+gotoxy (19,23);              
+writeln('                               `.-://///::::---------::::://///:-`                    '); 
+ delay(250);
+gotoxy (19,24);               
+writeln('                            `.:////::--.`````````````````..--::////-.                '); 
+ delay(250); 
+gotoxy (19,25);               
+writeln('                          .:///::-..``````````````````````````.-:::///-`             '); 
+ delay(250);
+gotoxy (19,26);                
+writeln('                        .///::-..----.```````````````````````````.-::///:`           ');  
+ delay(250); 
+gotoxy (19,27);              
+writeln('                      .://:::+syhhhhhhys/.`````````````````````````..::://-`         '); 
+ delay(250); 
+gotoxy (19,28);               
+writeln('                    `://:::ohhyo+/:::/oyhh:`...`````````.```````````..-::://.         '); 
+ delay(250);   
+gotoxy (19,29);            
+writeln('                   `:/:::-.so:.``.....``.:+............-/+ossyyyyysso/..::://-        ');  
+ delay(250);
+gotoxy (19,30);              
+writeln('                  .//:::-...........-/++-.............:yysoo+++///+++o:..-:://:`      ');  
+ delay(250);
+gotoxy (19,31);              
+writeln('                 .//:::-..........-ohyyyh/...............-::-.............-:://:`     ');    
+ delay(250);
+gotoxy (19,32);            
+writeln('                `//:::--..........ohysssys.............:yhhhho............-::://-     ');  
+ delay(250);
+gotoxy (19,33);              
+writeln('                :/:::---.-.--.-.--syssssyo.---------..:hysssyy:.--...-------::://.     ');  
+ delay(250);  
+gotoxy (19,34);           
+writeln('              .//:::-------------/ysssy+-------------+ysssssy---------------:::/:`     ');  
+ delay(250); 
+gotoxy (19,35);           
+writeln('               :/:::---------------:++/---------------/yssssy/---------------::://.    ');   
+ delay(250);
+gotoxy (19,36);            
+writeln('             `//:::-----------------------------------:ooo+------------------:::/:     '); 
+ delay(250);
+gotoxy (19,37);             
+writeln('              .//::-----------------------------------------------------------::://`   ');   
+ delay(250);
+gotoxy (19,38);            
+writeln('              -//:::----------------------------------------------------------::://`   ');   
+ delay(250);
+gotoxy (19,39);             
+writeln('              .//:::---------------------------------------------------------:::://`   '); 
+ delay(250);
+gotoxy (19,40);              
+writeln('              `//::::-------------------------------------------------------:::::/-    ');  
+ delay(250);   
+gotoxy (19,41);          
+writeln('               :/::::-:-:::::-----------------------------------------------:::://.    ');   
+ delay(250); 
+gotoxy (19,42);           
+writeln('              .//::::--:/:::::-------+syyyyyyyyss+/::----------------------::::/:`     ');  
+ delay(250);
+gotoxy (19,43);            
+writeln('                :/::::--:/...:/----------------::/+osyyys:-----------------:::://.     '); 
+ delay(250);    
+gotoxy (19,44);           
+writeln('                `//::::-:/-...::------------------------:------------------::::/-      ');  
+ delay(250);
+gotoxy (19,45);              
+writeln('                .//:::://-..-::-------------------------------------------:::/:`       '); 
+ delay(250); 
+gotoxy (19,46);             
+writeln('                  .//::/+:----//::-------------::::::::::-----------------:::/-`       '); 
+ delay(250);    
+gotoxy (19,47);          
+writeln('                   `:/+o/-----:////////:::::::----...--:/:---------------:::/-         ');   
+ delay(250); 
+gotoxy (19,48);           
+writeln('                    `-oo:----------------.-------:/++o+/:--------------:::/:.          ');  
+ delay(250);    
+gotoxy (19,49);         
+writeln('                      -/--........````...--/osyyyso+/::---------------:://-`           ');   
+ delay(250);
+gotoxy (19,50);            
+writeln('                      .:--...............--:+so+/::----------------::://-`             ');   
+ delay(250);
+gotoxy (19,51);            
+writeln('                      .:----............----:o+::---------------::::/:.`               '); 
+ delay(250);   
+gotoxy (19,52);           
+writeln('                     .:--------.---------:/oo+:-------------::::/:-`                  '); 
+ delay(250);    
+gotoxy (19,53);          
+writeln('                      `::-------------------:++/:-----:::::::/:-.`                   '); 
+ delay(250);    
+gotoxy (19,54);            
+writeln('                       -/:---------------::/oyo//:::::/:::-..`                      ');  
+ delay(250);
+gotoxy (19,55);                
+writeln('                       `:/::::::::::::::::::/--.....```                            ');  
+ delay(250); 
+gotoxy (19,56);                
+writeln('                         .///:::::::://////:.                                     ');  
+ delay(250);
+gotoxy (19,57);                  
+writeln('                           `.-::::::::-.``                                        ');
+
+gotoxy (38,59);
+  writeln ('PRESSIONE QUALQUER TECLA PARA RETORNAR AO MENU...');
+  
+  readkey;
+  menu;
+  
+end;
+
+procedure nivelmedio (var score:integer);
+begin
+
+  gotoxy (45,10);
+  writeln  ('#     FIM DE JOGO     #');
+  gotoxy (45,11);
+  writeln ('SUA PONTUAÇÃO FOI :',score);
+  gotoxy (38,14);
+  writeln  ('VISTO QUE EXISTE UMA CERTA DIFICULDADE');
+  gotoxy (38,15);
+  WRITELN ('Recomendos : https://becode.com.br');
+  gotoxy (38,17);
+  writeln ('PRESSIONE QUALQUER TECLA PARA RETORNAR AO MENU...');
+  textcolor(white);
+  gotoxy (25,21);
+   delay(250);                                                                                                      
+writeln('                                                ````........``                                               ');
+gotoxy (20,22);
+   delay(250); 
+writeln('                                      `````..------------------.`                                             ');
+gotoxy (20,23);
+   delay(250); 
+writeln('                                ``.-------:-----..............-----`                                          ');
+gotoxy (20,24);
+   delay(250); 
+writeln('                              .---::::::::::--..................-----.                                         ');
+gotoxy (20,25);
+   delay(250); 
+writeln('                            .--:::::::::::::--...................---:--.                                        ');
+gotoxy (20,26);
+   delay(250); 
+writeln('                          `--::::::::::::::::---.................--::::-.`                                    ');
+gotoxy (20,27);
+   delay(250); 
+writeln('                         .-::::::::::::::::::::-------------------::::::--`                                    ');
+gotoxy (20,28);
+   delay(250); 
+writeln('                        .-:::::::::::::::::::::::::::::::::::::::::::::::--`                                   ');
+gotoxy (20,29);
+   delay(250); 
+writeln('                       .-::::::::::::::-------------::::::::::::::::::::::-.                                   ');
+gotoxy (20,30);
+   delay(250); 
+writeln('                      `-:::::::::::::--/s+/::------------------::::::::::::-`                                  ');
+gotoxy (20,31);
+   delay(250); 
+writeln('                     .-:::::::::::--:+o--:++ooooooooo++++++++/::--::::::::-.                                   ');
+gotoxy (20,32);
+   delay(250); 
+writeln('   ..                 .-::::::::--/+oo:....................---:/+++/---::::--`                     ..            ');
+gotoxy (20,33);
+   delay(250); 
+writeln('  `::-`               --::::::-:+o+:-...................-/osyyso+:/+o+:---:--`                   `:::`          ');
+gotoxy (20,34);
+   delay(250); 
+writeln('   `:--.              .-::::-:oyo/-...................-+hhshNNNd-:+/+sy/-----.                  .--:`         ');
+gotoxy (20,35);
+   delay(250); 
+writeln('    `----.            .-:::-:oys+:-.:oyhdddy+:......../.hh+yNNNN+`-:/oyo/:::--                .----`          ');
+gotoxy (20,36);
+   delay(250); 
+writeln('      .-----.`        .-::--//ys+:+osh/smNNN+-:-.....--`:mmmNNmh---:/oys/::::-`           `.-----.          ');
+gotoxy (20,37);
+   delay(250); 
+writeln('       `---------.    `--:-::/ys+// +myyNNNNs`.-.......---///:-----:/+sy//::::.       .---------`            ');
+gotoxy (20,38);
+   delay(250); 
+writeln('        `---...----    ----::/ys+:-..smmmmdy:-.--------------------:/+sy+//:::-      ----...---`             ');
+gotoxy (20,39);
+   delay(250); 
+writeln('         `::///////`   .--:::/syo/:-------------------::-----------:/oyy+///::-     `///////::`              ');
+gotoxy (20,40);
+   delay(250); 
+writeln('         -so+++++oo/   `-::::/+ys+:-------------+/://+s/----------::+oys+////::`    /oo+++++os-               ');
+gotoxy (20,41);
+   delay(250); 
+writeln('         :o+//:://+/    -:::://syo+:------------:+oo+/:----------::/osho/////::`    /+//:://+o-               ');
+gotoxy (20,42);
+   delay(250); 
+writeln('         -+/:::::/+/    `-::///+yyo/::-------------------------:::/+sys+/////::`    /+/:::::/+-              ');
+gotoxy (20,43);
+   delay(250); 
+writeln('         -+/:::::/+/     -::+++osyyo+/::-----------:-:::::-::::::/+syysoooo+/::`    /+/:::::/+-              ');
+gotoxy (20,44);
+   delay(250); 
+writeln('         -+/:::::/+/     `/oo++//+yys+/:::::::::-::ymNNm/:::::::/+syyo+//++oo+:`    /+/:::::/+-             ');
+gotoxy (20,45);
+   delay(250); 
+writeln('         -+/:::::/+/    `/o+/:::::/oyyo+//:::::::::shhy+::::::/+oyys/::::::/+oo`    /+/:::::/+-              ');
+gotoxy (20,46);
+   delay(250); 
+writeln('         -+/::::://:   .o+/:::-----:/syyso+//:::::::::::::://+oyyy+::-----:::/++.   ///:::::/+.             ');
+gotoxy (20,47);
+   delay(250); 
+writeln('         -+/::::::/:  :o+/:::--------:/oyyyso++//////////++osyys+:---------:::/+o-  :/::::::/+.             ');
+gotoxy (20,48);
+   delay(250); 
+writeln('         -+/:::::::: /o+/::-------------:/osyyyysssoosssyyyyso/:------------:::/+o/ ::::::::/+.              ');
+gotoxy (20,49);
+   delay(250); 
+writeln('         -+/:::-::::++//::-----------------::/+oyhysssyhs+/::-----------------:://++::::::::/+.              ');
+gotoxy (20,50);
+   delay(250); 
+writeln('         -+/::-----://:::----::::::::------------/ss+so:-----------::::::::----::://:----:::/+.              ');
+gotoxy (20,51);
+   delay(250); 
+writeln('         -+/:::-----::::--::::::/::::::------------/+:-----------:::::-::::::---::::-----:::/+-              ');
+gotoxy (20,52);
+   delay(250); 
+writeln('         -+//::---------::::///-``:/:::--------------------------:::/: `-///::::---------:://+-              ');
+gotoxy (20,53);
+   delay(250); 
+writeln('         `o+/:::-----:::::/++-`   ://::--------------------------:://:   `:++/::::------:::/+o`              ');
+gotoxy (20,54);
+   delay(250); 
+writeln('          -o+//:::::::///+/-`     /+//:::::::::::::::::::::::::::://+-     `-/+///::::::://+o.               ');
+gotoxy (20,55);
+   delay(250); 
+writeln('          `:++++///+++/:.        /o++/////////////////////////////+o:        .:/+++///++++:`                  ');
+gotoxy (20,56);
+   delay(250); 
+writeln('              ``.----.`           :+++////////////////////////////+++-           `.---..``                   ');
+                                                                                                                    
+gotoxy (38,58);   
+      writeln ('PRESSIONE QUALQUER TECLA PARA RETORNAR AO MENU...');
+  
+  readkey;
+  menu;
+  
+end;
+
+procedure alto(var score:integer);
+
+begin
+  
+  gotoxy (50,10);
+  writeln  ('#       FIM DE JOGO      #');
+  gotoxy (50,11);
+  writeln ('SUA PONTUAÇÃO FOI :',score);
+  gotoxy (50,14);
+  writeln  ('VOCê É BRABO !');
+  
+ 
+   gotoxy (25,25);
+   textcolor(white);
+writeln (' MMMMMMMMMMMMMMMMMMMMMMMNNNNddmNNMMMMMMMMMMMMMMMMMM');
+ gotoxy (27,24);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMMMMMmhs- `` -omhmMMMMMMMMMMMMMMM  ');
+ gotoxy (27,25);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMMMMNm: -+///:``ymNMMMMMMMMMMMMMM  ');
+ gotoxy (27,26);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMMMmmy .+::---/. /mmNMMMMMMMMMMMM  ');
+ gotoxy (27,27);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMNdh:``-o/::---/: -mmmMMMMMMMMMMM  ');
+ gotoxy (27,28);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMmd``++/oo/::---:: .hmmNMMMMMMMMM  ');
+ gotoxy (27,29);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMmy -o/:/+o+::---:/. +mmNMMMMMMMM  ');
+ gotoxy (27,30);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMmm-`+o+//+o+::----:: .dmmMMMMMMM   ');
+ gotoxy (27,31);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMNdms-.:+o++o+:----.:/ .mmNMMMMMM  ');
+ gotoxy (27,32);
+delay(250);
+writeln (' MMMMMMMMMMMMMMNNNNmhhhmd+.:ooooo:----.:: /mmMMMMMM  ');
+ gotoxy (27,33);
+delay(250);
+writeln (' MMMMMMMNmNds+/:-. ``.` `-:``:oos+:-----+. ymmMMMMM  ');
+ gotoxy (27,34);
+delay(250);
+writeln (' MMMMMMNdy- -://////::://:-.``.sso::-----+``dmNMMMM  ');
+ gotoxy (27,35);
+delay(250);
+writeln (' MMMMMMmh `o/--...........--://+oo/::----:/ -mmMMMM  ');
+ gotoxy (27,36);
+delay(250);
+writeln (' MMMNNNmo :o-...................---::::---/: /mmNMM  ');
+ gotoxy (27,37);
+delay(250);
+writeln (' MMdy:` ``.oo///+//////:-............--::--/. ommMM  ');
+ gotoxy (27,38);
+delay(250);
+writeln (' Mmh .++//+++:--.`````.:++/:--...........--:/` ymmM  ');
+ gotoxy (27,39);
+delay(250);
+writeln (' Mdh .+-...-:+:         `.:/++-............-:/``dmN  ');
+ gotoxy (27,40);
+delay(250);
+writeln (' MNm+`//-....-+/           `.o:-...........-:/- smm  ');
+ gotoxy (27,41);
+delay(250);
+writeln (' MMmy :+-.....:o.          -++-............-:o. hmm  ');
+ gotoxy (27,42);
+delay(250);
+writeln (' MMmm`.o:.....-:+-     .:/+:-..............:+/`/mmN  ');
+ gotoxy (27,43);
+delay(250);
+writeln (' MMNmo`:+:......-:++//+/--...............--//`:mmmM  ');
+ gotoxy (27,44);
+delay(250);
+writeln (' MMMmm+`:o/-.......---............--------/+..mmNMM  ');
+ gotoxy (27,45);
+delay(250);
+writeln (' MMMMNmy-./+:-............---------------:+-`hmmMMM  ');
+ gotoxy (27,46);
+delay(250);
+writeln (' MMMMMmdmo`:o/-...---------------------::+/`+mmMMMM  ');
+ gotoxy (27,47);
+delay(250);
+writeln (' MMMMMMMdmy..+o/---------------::::::::/+s.`mmmMMMM  ');
+ gotoxy (27,48);
+delay(250);
+writeln (' MMMMMMMMNNm+..+o+::---:::::::::::::///os:`smmMMMMM  ');
+ gotoxy (27,49);
+delay(250);
+writeln (' MMMMMMMMMNdmms.-os+/::::::::://///+oso/.-hmdNMMMMM  ');
+ gotoxy (27,50);
+delay(250);
+writeln (' MMMMMMMMMMMMmdm+../+osoooooosssoo+/:.-+ymmmNMMMMMM  ');
+ gotoxy (27,51);
+delay(250);
+writeln (' MMMMMMMMMMMMMNdNmho:-..-----...-:/oydmNNMMMMMMMMMM  ');
+ gotoxy (27,52);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMNNNNmmddddmmmmNNNNNMMMMMMMMMMMMMM  ');
+ gotoxy (27,53);
+delay(250);
+writeln (' MMMMMMMMMMMMMMMMMMMMMMMMNNNNMMMMMMMMMMMMMMMMMMMMMM  ');
+
+gotoxy (38,55);
+ writeln ('PRESSIONE QUALQUER TECLA PARA RETORNAR AO MENU...');
+	 readkey;
+  menu;
+end;
+
+
+
+
+procedure quiz1(var score:integer);
+var
+
+pontu:integer;
+resp:integer;
+
+
+begin
+  textbackground (lightred);
+  score := 0;
+  clrscr;
+  
+  //PERGUNTA 1
+  gotoxy (25,2);
+  
+  textcolor(white);
+writeln ('            VOCÊ ENTENDE DE LOGICA DE PROGRAMAÇÃO?            ');
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy (25,5);
+writeln ('  PERGUNTA 1: Oque significa ''concatenar''?');
+gotoxy (25,6);
+writeln ('  1 - Trata  se de um conjunto de texto de caracteres');
+gotoxy (25,7);
+writeln ('  2 - Dividir duas variáveis');
+gotoxy (25,8);
+writeln ('  3 - Unir dados de modo lógico ou manter conexão entre eles');
+gotoxy (25,9);
+writeln ('  4 - Configurar o tipo de uma variável');
+gotoxy (33,12);
+write ('RESPOSTA: ');
+read (resp);
+
+if (resp = 3) then
+begin
+  gotoxy (45,15);
+  writeln ('RESPOSTA CORRETA, +10!');
+  gotoxy (30,17);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+  score := score + 10
+end
+else
+begin
+  gotoxy (45,15);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,17);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+//--------------------------------------------------------------------------
+
+readkey;
+clrscr;
+
+//PERGUNTA 2
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy(25,5);
+writeln ('PERGUNTA 2:  Oque signfica ''pseudocodgio''?');
+gotoxy(25,7);
+writeln (' 1 - Maneira rigorosa de raciocinar');
+gotoxy(25,8);
+writeln (' 2 - Uma forma genérica de escrever um algoritimo de forma simples') ;
+gotoxy(25,9);
+writeln (' sem a necessidade de conhecer a sintaxe de uma linguagem especifica');
+gotoxy(25,10);
+writeln (' 3 - Uma sequência de passos para atingir um determinado objetivo') ;
+gotoxy (33,12);
+write ('RESPOSTA: ');
+read (resp);
+if (resp = 2) then
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA CORRETA, +10!');
+  score := score + 10;
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end
+else
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+//-----------------------------------------------------------------------
+readkey;
+clrscr;
+
+//PERGUNTA 3
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy (25,5);
+writeln ('PERGUNTA 3: Oque é um algoritimo?');
+gotoxy (25,7);
+writeln (' 1 - Trata-se de uma sequência de passos, conhecida como');
+gotoxy (24,8);
+writeln ('um conjunto de instruções para se chegar a um determinado objetivo');
+gotoxy (25,9);
+writeln (' 2 - São ações ditas ao computador para ele executar');
+gotoxy (25,10);
+writeln (' 3 - É a solução do problema');
+gotoxy (25,11);
+writeln (' 4 - Permite operações lógicas e aritméticas utilizando apenas dois digitos');
+gotoxy (25,12);
+writeln (' ou dois estados') ;
+gotoxy (33,14);
+write ('RESPOSTA: ');
+read(resp) ;
+if (resp = 1) then
+begin
+  gotoxy (45,16);
+  writeln ('RESPOSTA CORRETA, +10!');
+  score := score + 10;
+  gotoxy (30,18);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end
+else
+begin
+  gotoxy (45,16);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,18);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+
+readkey;
+clrscr;
+
+
+
+//PERGUNTA 4
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy(25,5);
+writeln ('PERGUNTA 4: Oque são arrays?');
+gotoxy(25,7);
+writeln (' 1 - São estrutura de dados homogêneos que possibilitam o armazenamento');
+gotoxy(25,8);
+writeln (' de grupos de valores do mesmo tipo, em uma unica variavel');
+gotoxy(25,9);
+writeln (' 2 - São variáveis especificas para armazenamentos de números inteiros');
+gotoxy(25,10);
+writeln (' 3 - Trata - se de uma forma de planejamento do algoritimo');
+gotoxy (33,12);
+write ('RESPOSTA: ');
+read(resp) ;
+if (resp = 1) then
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA CORRETA, +10!');
+  score := score + 10;
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end
+else
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+//----------------------------------------------------------------
+readkey;
+clrscr;
+
+//PERGUNTA 5
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy(25,5);
+writeln ('PERGUNTA 5: Onde as variáveis ficam armazenadas?');
+gotoxy(25,7);
+writeln (' 1 - No banco de dados, no software e na memoria RAM');
+gotoxy(25,8);
+writeln (' 2 - No Banco de Dados') ;
+gotoxy(25,9);
+writeln (' 3 - No programa/Software');
+gotoxy(25,10);
+writeln (' 4 - Na Memoria RAM') ;
+gotoxy (33,12);
+write ('RESPOSTA: ');
+read(resp) ;
+if (resp = 4) then
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA CORRETA, +10!');
+  score := score + 10;
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end
+else
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+//---------------------------------------------------------------------------
+
+readkey;
+clrscr;
+
+// PERGUNTA 6
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy(25,5);
+writeln ('PERGUNTA 6: Dos grupos abaixo, quais apresentam apenas paradigmas de programação?');
+gotoxy(25,7);
+writeln (' 1 - Imperativo, Programar, Lógico e Orientando Objetos');
+gotoxy(25,8);
+writeln (' 2 - Orientando a objetos, Java, Imperativo e Lógico');
+gotoxy(25,9);
+writeln (' 3 - Algol, Basic, Lógico Orientada Objetos');
+gotoxy(25,10);
+writeln (' 4 - Imperativo, Funcional, Lógico e Orientada Objetos');
+gotoxy (33,12);
+write ('RESPOSTA: ');
+read(resp) ;
+if (resp = 4) then
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA CORRETA, +10!');
+  score := score + 10;
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end
+else
+begin
+  gotoxy (45,14);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,16);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+
+readkey;
+clrscr;
+//PERGUNTA 7
+gotoxy (90,3);
+writeln ('PONTUAÇÃO: ',score);
+gotoxy(20,5);
+writeln ('PERGUNTA 7: Informe a opção que melhor define o conceito de lógica na area de tecnologia.');
+gotoxy(20,7);
+writeln (' 1 - Encadear uma série de instruções para que se possa chegar a solução de um problema');
+gotoxy(20,8);
+writeln (' 2 - Maneira rigorosa de raciocinar');
+gotoxy(20,9);
+writeln (' 3 - Encadameanto coerente de alguma coisa que obedece a certa convenções e regras');
+gotoxy(20,10);
+writeln (' 4 - Organização e planejamento das instruções, em um algoritimo, a fim de viabilizar');
+gotoxy(20,11);
+writeln (' a implantação de um programa /software');
+gotoxy (28,13);
+write ('RESPOSTA: ');
+read(resp) ;
+if (resp = 4) then
+begin
+  gotoxy (45,15);
+  writeln ('RESPOSTA CORRETA, +10!');
+  score := score + 10;
+  gotoxy (30,17);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end
+else
+begin
+  gotoxy (45,15);
+  writeln ('RESPOSTA ERRADA');
+  gotoxy (30,17);
+  writeln  ('Pressione qualquer tecla para a proxima pergunta..');
+end;
+
+//-----------------------------------------------------------------
+
+readkey;
+clrscr;
+
+
+
+
+
+
+
+if (score >= 0) and (score <= 25) then
+begin
+  nivelbaixo(score);
+end
+else
+if (score >= 25) and (score <= 50) then
+begin
+  nivelmedio(score);
+end
+else
+if (score >= 50) and (score <= 69) then
+begin
+  nivelmedio(score);
+end
+else
+if (score >= 70) and (score <= 100) then
+begin
+  alto(score);
+end;
+
+
+
+end;
+
+
+
+
+//PROCEDIMENTO JOGO DA VELHA
+procedure jogodavelha(jogador1,jogador2:string);
+var
+inf:integer;
+campo:array[1..3,1..3] of string;
+jogada,numero_jogadas:integer;
+cont_jogador:integer;
+jogada_ok:boolean;
+jogador:array [1..2] of string;
+vencedor:integer;
+simbolo,again:string;
+l,c:integer;
+begin
+  while (inf=inf) do
+  begin
+    cursoron;
+    textbackground(black);
+    for l:= 1 to 3 do
+    begin
+      for c:= 1 to 3 do
+      begin
+        campo[l,c] := ' ';
+      end;
+    end;
+    
+    
+    
+    //Exibe instruções
+    
+    
+    textcolor (white);
+    
+    numero_jogadas:= 0;
+    simbolo:= 'X';
+    cont_jogador:=1;
+    vencedor:= 0;
+    
+    
+    while (vencedor=0) do
+    
+    begin
+      repeat
+        //Desenha o jogo da velha
+        
+        
+        writeln;
+        gotoxy(30,5);
+        writeln('  ', campo[1, 1], ' | ', campo[1, 2], ' | ', campo[1, 3]);
+        gotoxy(30,6);
+        writeln(' -----------');
+        gotoxy(30,7);
+        writeln('  ', campo[2, 1], ' | ', campo[2, 2], ' | ', campo[2, 3]);
+        gotoxy(30,8);
+        writeln(' -----------');
+        gotoxy(30,9);
+        writeln('  ', campo[3, 1], ' | ', campo[3, 2], ' | ', campo[3, 3]);
+        writeln;
+        
+        
+        gotoxy(15,2);
+        writeln ('Jogador 1 ',jogador1,' = X');
+        gotoxy(45,2);
+        writeln ('Jogador 2 ',jogador2,' = O');
+        gotoxy (25,12);
+        
+        
+        write ('Vez do JOGADOR ',cont_jogador,': ');
+        read(jogada);
+        clrscr;
+        case (jogada) of
+          1:
+          begin
+            if (campo[3,1] = ' ') then
+            begin
+              campo[3,1]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          2:
+          begin
+            if (campo[3,2] = ' ') then
+            begin
+              campo[3,2]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          3:
+          begin
+            if (campo[3,3] = ' ') then
+            begin
+              campo[3,3]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          4:
+          begin
+            if (campo[2,1] = ' ') then
+            begin
+              campo[2,1]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          5:
+          begin
+            if (campo[2,2] = ' ') then
+            begin
+              campo[2,2]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          6:
+          begin
+            if (campo[2,3] = ' ') then
+            begin
+              campo[2,3]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          7:
+          begin
+            if (campo[1,1] = ' ') then
+            begin
+              campo[1,1]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          
+          8:
+          begin
+            if (campo[1,2] = ' ') then
+            begin
+              campo[1,2]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+          end;
+          9:
+          begin
+            if (campo[1,3] = ' ') then
+            begin
+              campo[1,3]:=simbolo;
+              jogada_ok:=true;
+            end
+            else
+            jogada_ok:=false;
+            
+          end;
+          
+        end;//Termina case
+          
+          
+        until (jogada_ok = true);//fim repeat
+          
+          numero_jogadas := numero_jogadas + 1;
+          
+          //Verifica se há algum jogador
+          if (campo[1, 1] = campo[1, 2]) and (campo[1, 2] = campo[1, 3]) and (campo[1, 3] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[2, 1] = campo[2, 2]) and (campo[2, 2] = campo[2, 3]) and (campo[2, 3] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[3, 1] = campo[3, 2]) and (campo[3, 2] = campo[3, 3]) and (campo[3, 3] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[1, 1] = campo[2, 1]) and (campo[2, 1] = campo[3, 1]) and (campo[3, 1] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[1, 2] = campo[2, 2]) and (campo[2, 2] = campo[3, 2]) and (campo[3, 2] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[1, 3] = campo[2, 3]) and (campo[2, 3] = campo[3, 3]) and (campo[3, 3] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[1, 1] = campo[2, 2]) and (campo[2, 2] = campo[3, 3]) and (campo[3, 3] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (campo[1, 3] = campo[2, 2]) and (campo[2, 2] = campo[3, 1]) and (campo[3, 1] <> ' ') then
+          begin
+            vencedor := cont_jogador;
+          end
+          else if (numero_jogadas = 9) then
+          begin
+            vencedor := 3;
+          end;
+          if (cont_jogador = 2) then
+          begin
+            cont_jogador := 1;
+            simbolo:= 'X';
+          end
+          else
+          begin
+            cont_jogador := 2;
+            simbolo:= 'O';
+          end;
+          
+          
+          
+          
+          
+        end;//FIM WHILE
+        
+        clrscr; // Limpa a tela
+        
+        writeln;
+        gotoxy(30,5);
+        writeln('  ', campo[1, 1], ' | ', campo[1, 2], ' | ', campo[1, 3]);
+        gotoxy(30,6);
+        writeln(' -----------');
+        gotoxy(30,7);
+        writeln('  ', campo[2, 1], ' | ', campo[2, 2], ' | ', campo[2, 3]);
+        gotoxy(30,8);
+        writeln(' -----------');
+        gotoxy(30,9);
+        writeln('  ', campo[3, 1], ' | ', campo[3, 2], ' | ', campo[3, 3]);
+        writeln;
+        
+        if (vencedor = 1) then
+        begin
+          gotoxy (20,12);
+          writeln('Parabéns ',jogador1,' Você ganhou!!');
+        end
+        else
+        if (vencedor = 2) then
+        begin
+          gotoxy (20,12);
+          writeln('Parabéns ',jogador2,' Você ganhou!!');
+        end
+        else
+        begin
+          gotoxy (20,12);
+          writeln(' Ops... Deu velha...');
+        end;
+        gotoxy (20,14);
+        write ('Deseja jogar novamente? S ou N: ');
+        read (again);
+        if (again = 'S') or (again = 's') then
+        begin
+          clrscr;
+          continue;
+        end
+        else
+        begin
+          break;
+        end;
+        
+        
+        
+      end;//WHILE DO INICIO PARA REPETIR TODO O JOGO NOVAMENTE
+      clrscr;
+      menu;
+      
+    end;//FIM DO PROCEDIMENTO
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //PROGRAMA PRINCIPAL
+    
+    var
+    jogador1,jogador2:string;
+    contador_barra:integer;
+    cont:integer;
+    resp:integer;
+    begin
+      while (cont = cont) do
+      begin
+        clrscr;
+        menu();
+        read(resp);//LER OPÇÃO QUE O USUÁRIO ESCOLHEU
+        
+        if (resp = 1) then
+        begin
+          gotoxy (35,18);
+          textcolor (lightcyan);
+          writeln  ('CARREGANDO');
+          gotoxy (25,20);
+          for contador_barra:= 1 to 30 do
+          begin
+            textbackground(5);
+            delay(200);
+            write(' ');
+            textbackground(black);
+          end;
+          
+          clrscr;
+          
+          textcolor(white);
+          gotoxy (35,3);
+          writeln ('JOGADORES');
+          gotoxy (25,5);
+          write ('Digite o nome do Jogador 1: ');
+          read(jogador1);
+          gotoxy (25,7);
+          write('Digite o nome do Jogador 2: ');
+          read(jogador2);
+          
+          clrscr;
+          
+          gotoxy(35,3);
+          writeln('INSTRUÇÕES');
+          gotoxy (15,5);
+          writeln ('O Jogador 1 começa, digite o numero de 1 a 9 usando');
+          gotoxy (15,6);
+          writeln ('o teclado numerico correspondente as ''casas'', quem');
+          gotoxy (15,7);
+          writeln ('completar uma linha vertical horizontal ou diagonal vence o jogo.');
+          gotoxy (15,9);
+          writeln ('Pessione qualquer tecla para iniciar...');
+          readkey;
+          clrscr; // Limpa a tela
+          
+          jogodavelha(jogador1,jogador2);
+        end
+        else
+        if (resp = 2) then
+        begin
+          gotoxy (35,18);
+          textcolor (lightcyan);
+          writeln  ('CARREGANDO');
+          gotoxy (25,20);
+          for contador_barra:= 1 to 30 do
+          begin
+            textbackground(5);
+            delay(200);
+            write(' ');
+            textbackground(black);
+          end;
+          quiz1
+        end
+        else
+        if (resp = 3) then
+        begin
+          exit;
+        end;
+      end;
+      
+    End.

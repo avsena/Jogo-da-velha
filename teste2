@@ -1,0 +1,643 @@
+Program Pzim ;
+uses
+crt; 
+procedure nivelbaixo (var score1:integer);
+begin
+writeln  ('        #    FIM DE JOGO     #      ');
+writeln ('SUA PONTUAÇÃO FOI :',score);
+
+writeln  ('SEU NIVEL TEORICO ESTÁ MEIO LIMITADO, ESTUDE MAIS!'); 
+readkey;
+
+
+ end;
+
+procedure nivelmedio (var score2:integer);
+begin
+writeln  ('         #     FIM DE JOGO     #    ');
+writeln ('SUA PONTUAÇÃO FOI :',score);
+
+writeln  ('VISTO QUE EXISTE UMA CERTA DIFICULDADE');
+readkey;  
+
+ 
+ end;
+ 
+procedure alto(var score3:integer);
+begin
+writeln  ('      #       FIM DE JOGO      #     ');
+writeln ('SUA PONTUAÇÃO FOI :',score);
+writeln  ('VOCE PRECISA ESTUDAR MAIS'); 
+ end;
+  
+
+
+procedure quiz1(var score:integer);
+var
+
+pontu:integer;
+resp:array [1..10] of integer;
+
+
+begin
+
+score := 0;
+clrscr;
+ 
+textcolor(white);
+writeln ('            VOCÊ ENTENDE DE LOGICA DE PROGRAMAÇÃO?            ');
+
+writeln ('  PERGUNTA 1: Oque significa ''concatenar''               ') ;
+writeln ('  1 - Trata  se de um conjunto de texto de caracteres');
+writeln ('  2 - Dividir duas variáveis');
+writeln ('  3 - Unir dados de modo lógico ou manter conexão entre eles');
+writeln ('  4 - Configurar o tipo de uma variável'); 
+read (resp[1]);
+	 if (   resp [1] = 3) then
+	 begin
+	
+	writeln ('       Certa Resposta, +10!       ');
+	score := score + 10
+	end
+	else
+	
+	writeln ('Resposta Errada');
+	
+	writeln  ('   >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)         ');
+	readkey;
+	 
+clrscr;
+
+writeln ('PERGUNTA 2:  Oque signfica ''pseudocodgio''       ');
+writeln (' 1 - Maneira rigorosa de raciocinar');
+writeln (' 2 - Uma forma genérica de escrever um algoritimo de forma simples') ;
+writeln (' sem a necessidade de conhecer a sintaxe de uma linguagem especifica');
+writeln (' 3 - Uma sequência de passos para atingir um determinado objetivo') ;
+read (   resp[2]);
+  if (    resp[2] = 2) then
+  begin
+ 
+ writeln ('Resposta certa, +10!');
+ score := score + 10;
+  end
+  else 
+ 
+ writeln ('Resposta Errada');
+ writeln ('            >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)    ');
+ readkey; 
+  
+  
+clrscr;  
+
+
+writeln ('PERGUNTA 3: Oque é um algoritimo  ');
+writeln (' 1 - Trata-se de uma sequência de passos, conhecida como');
+writeln (' um conjunto de instruções para se chegar a um determinado objetivo')   ;
+writeln (' 2 - São ações ditas ao computador para ele executar');
+writeln (' 3 - É a solução do problema');
+writeln (' 4 - Permite operações lógicas e aritméticas utilizando apenas dois digitos');
+writeln (' ou dois estados') ;
+read(    resp[3]) ;
+   if (resp[3] = 1 ) then
+	 begin 
+
+	 writeln ('Resposta Correta');
+	 score := score + 10;
+	 end
+	 else
+	 writeln ('Resposta Errada');
+	 writeln ('          >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)    ');
+	 readkey;
+	   clrscr;
+	
+
+	 
+	 
+
+	 
+	 
+	 
+writeln ('PERGUNTA 4: Oque são arrays      ');
+writeln (' 1 - São estrutura de dados homogêneos que possibilitam o armazenamento')   ;
+writeln (' de grupos de valores do mesmo tipo, em uma unica variavel') ;
+writeln (' 2 - São variáveis especificas para armazenamentos de números inteiros');
+writeln (' 3 - Trata - se de uma forma de planejamento do algoritimo');
+read(    resp[4]) ;
+   if (resp[4] = 1) then
+	 begin 
+
+	 writeln ('Resposta Correta');
+	 score := score + 10;
+	 end
+	 else
+	 writeln ('Resposta Errada');
+	 writeln ('          >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)    ');
+	 readkey;
+	     clrscr;
+	 
+	 
+	 
+writeln ('PERGUNTA 6: Onde as variáveis ficam armazenadas     ');
+writeln (' 1 - No banco de dados, no software e na memoria RAM');
+writeln (' 2 - No Banco de Dados') ;
+writeln (' 3 - No programa/Software');
+writeln (' 4 - Na Memoria RAM') ;
+read(    resp[5]) ;
+   if (resp[5] = 4) then
+	 begin 
+	 score := score + 10;
+	 writeln ('Resposta Correta');
+	 end
+	 else
+	 writeln ('Resposta Errada');
+	 writeln ('          >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)    ');
+	 readkey;
+	  clrscr;
+
+	 
+	 
+writeln ('PERGUNTA 6: Dos grupos abaixo, quais apresentam apenas paradigmas de programação      ');
+writeln (' 1 - Imperativo, Programar, Lógico e Orientando Objetos');
+writeln (' 2 - Orientando a objetos, Java, Imperativo e Lógico');
+writeln (' 3 - Algol, Basic, Lógico Orientada Objetos') ;
+writeln (' 4 - Imperativo, Funcional, Lógico e Orientada Objetos');    
+read(    resp[6]) ;
+   if (resp[6] = 4) then
+	 begin 
+	 score := score + 10;
+	 writeln ('Resposta Correta');
+	 end
+	 else
+	 writeln ('Resposta Errada');
+	 writeln ('          >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)    ');
+	 readkey;
+	   clrscr;
+	 
+
+writeln ('PERGUNTA 7: Informe a opção que melhor define o conceito de lógica na area de tecnologia         ');
+writeln (' 1 - Encadear uma série de instruções para que se possa chegar a solução de um problema');
+writeln (' 2 - Maneira rigorosa de raciocinar');
+writeln (' 3 - Encadameanto coerente de alguma coisa que obedece a certa convenções e regras');
+writeln (' 4 - Organização e planejamento das instruções, em um algoritimo, a fim de viabilizar');
+writeln (' a implantação de um programa /software');   
+read(    resp[7]) ;
+   if (resp[7] = 4) then
+	 begin 
+	 score := score + 10;
+	 writeln ('Resposta Correta');
+	 end
+	 else
+	 writeln ('ERROU');
+	 writeln ('          >>>>> Próxima Pergunta ( Digite uma tecla para próxima pergunta)    ');
+	 readkey;
+	    clrscr;
+
+	 
+
+
+	 
+	 
+	 
+	 if (score >= 0) and (score <= 25) then
+	 begin
+			 nivelbaixo;
+	  end
+	  else
+	  if (score >= 25) and (score <= 50) then
+		begin
+	    nivelmedio;
+		end
+		else
+		if (score >= 50) and (score <= 75) then
+		begin
+	nivelmedio;
+		end 
+		else
+		if (score >= 75) and (score <= 100) then
+		begin 
+		alto;
+		
+		
+	   
+		
+	  end;
+				end;
+		
+
+
+	
+
+
+
+procedure jogodavelha;
+var
+resp:integer;
+campo:array[1..3,1..3] of string;
+vez,jogada,numero_jogadas:integer;
+cont:integer;
+cont_jogador:integer;
+jogada_ok:boolean;
+jogador:array [1..2] of string;
+vencedor:integer;
+simbolo:string;
+l,c:integer;
+begin
+  for l:= 1 to 3 do
+  begin
+    for c:= 1 to 3 do
+    begin
+      campo[l,c] := ' ';
+    end;
+  end;
+  
+  begin
+    for cont_jogador:= 1 to 2 do
+    begin
+    textcolor(white);
+      gotoxy (35,3);
+      writeln ('JOGADORES');
+      gotoxy (25,5);
+      write ('Digite o nome do JOGADOR ',cont_jogador,': ');
+      read(jogador[cont_jogador]);
+      clrscr;
+    end;
+    
+    
+    
+    
+    
+    
+    //Exibe instruções
+    textcolor(white);
+    gotoxy(35,3);
+    writeln('INSTRUÇÕES');
+    gotoxy (15,5);
+    writeln ('O Jogador 1 começa, digite o numero de 1 a 9 usando');
+    gotoxy (15,6);
+    writeln ('o teclado numerico correspondente as ''casas'', quem');
+    gotoxy (15,7);
+    writeln ('completar uma linha vertical horizontal ou diagonal vence o jogo');
+    gotoxy (15,9);
+    writeln ('     >>>>>    APÓS A VELHA  <<<<<               ');
+    gotoxy (15,10);
+		writeln (' O jogador vencedor será responsavel por responder uma sessão de perguntas');
+		gotoxy (15,11);
+		writeln (' onde cada pergunta vale 10 pontos.')      ;
+    gotoxy (15,13);
+    writeln ('PRESSIONE QUALQUER TECLA PARA COMEÇAR...');
+    readkey;
+    clrscr; // Limpa a tela
+  
+    textcolor (white);
+
+    numero_jogadas:= 0;
+    simbolo:= 'X';
+    cont_jogador:=1;
+    vencedor:= 0;
+    
+    
+     while (vencedor=0) do
+    
+     begin
+    //Desenha o jogo da velha
+      
+      
+      writeln;
+      gotoxy(30,5);
+      writeln('  ', campo[1, 1], ' | ', campo[1, 2], ' | ', campo[1, 3]);
+      gotoxy(30,6);
+      writeln(' -----------');
+      gotoxy(30,7);
+      writeln('  ', campo[2, 1], ' | ', campo[2, 2], ' | ', campo[2, 3]);
+      gotoxy(30,8);
+      writeln(' -----------');
+      gotoxy(30,9);
+      writeln('  ', campo[3, 1], ' | ', campo[3, 2], ' | ', campo[3, 3]);
+      writeln;
+      gotoxy(15,2);
+      writeln ('Jogador 1 ',jogador[1],'= X');
+      gotoxy(45,2);
+      writeln ('Jogador 2 ',jogador[2],'= O');
+      gotoxy (25,12);
+      
+       repeat
+      write ('VEZ DO JOGADOR ',cont_jogador,': ');
+      read(jogada);
+      clrscr;
+      case (jogada) of
+        1:
+        begin
+          if (campo[3,1] = ' ') then
+          begin
+            campo[3,1]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        2:
+        begin
+          if (campo[3,2] = ' ') then
+          begin
+            campo[3,2]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        3:
+        begin
+          if (campo[3,3] = ' ') then
+          begin
+            campo[3,3]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        4:
+        begin
+          if (campo[2,1] = ' ') then
+          begin
+            campo[2,1]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        5:
+        begin
+          if (campo[2,2] = ' ') then
+          begin
+            campo[2,2]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        6:
+        begin
+          if (campo[2,3] = ' ') then
+          begin
+            campo[2,3]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        7:
+        begin
+          if (campo[1,1] = ' ') then
+          begin
+            campo[1,1]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        
+        8:
+        begin
+          if (campo[1,2] = ' ') then
+          begin
+            campo[1,2]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+        end;
+        9:
+        begin
+          if (campo[1,3] = ' ') then
+          begin
+            campo[1,3]:=simbolo;
+            jogada_ok:=true;
+          end
+          else
+          jogada_ok:=false;
+
+        end;
+        
+      end;//Termina case
+        
+        
+      until (jogada_ok = true);//fim repeat
+        
+        numero_jogadas := numero_jogadas + 1;
+        
+        //Verifica se há algum jogador
+        if (campo[1, 1] = campo[1, 2]) and (campo[1, 2] = campo[1, 3]) and (campo[1, 3] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[2, 1] = campo[2, 2]) and (campo[2, 2] = campo[2, 3]) and (campo[2, 3] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[3, 1] = campo[3, 2]) and (campo[3, 2] = campo[3, 3]) and (campo[3, 3] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[1, 1] = campo[2, 1]) and (campo[2, 1] = campo[3, 1]) and (campo[3, 1] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[1, 2] = campo[2, 2]) and (campo[2, 2] = campo[3, 2]) and (campo[3, 2] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[1, 3] = campo[2, 3]) and (campo[2, 3] = campo[3, 3]) and (campo[3, 3] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[1, 1] = campo[2, 2]) and (campo[2, 2] = campo[3, 3]) and (campo[3, 3] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (campo[1, 3] = campo[2, 2]) and (campo[2, 2] = campo[3, 1]) and (campo[3, 1] <> ' ') then
+        begin
+          vencedor := cont_jogador;
+        end
+        else if (numero_jogadas = 9) then
+        begin
+          vencedor := 3;
+        end;
+        if (cont_jogador = 2) then
+      begin
+         cont_jogador := 1;
+         simbolo:= 'X';
+      end
+      else
+      begin
+         cont_jogador := 2;
+         simbolo:= 'O';
+      end;
+      
+      
+      
+   
+        
+      end;//FIM WHILE
+      
+       clrscr; // Limpa a tela
+  writeln;
+  writeln('  ', campo[1, 1], ' | ', campo[1, 2], ' | ', campo[1, 3]);
+  writeln(' -----------');
+  writeln('  ', campo[2, 1], ' | ', campo[2, 2], ' | ', campo[2, 3]);
+  writeln(' -----------');
+  writeln('  ', campo[3, 1], ' | ', campo[3, 2], ' | ', campo[3, 3]);
+  writeln;
+     
+  if (vencedor = 1) then
+  begin
+    write('            Parabens :',jogador[1],'!Voce ganhou                ');
+    write ('                          ');
+    writeln ('(Pressione uma tecla para próxima etapa do jogo.)           '); 
+    readkey;
+    quiz1;
+    
+ 
+    
+  end
+  else if(vencedor = 2) then
+  begin
+    write(' Parabens :', jogador[2],'!Voce ganhou!');
+    write ('             ');
+    writeln ('(Pressione uma tecla para próxima etapa do jogo.)                    '); 
+    readkey;
+    
+         quiz1;
+  
+  
+ 
+  
+  end
+  else
+  begin
+    write(' Ops... Deu velha...');
+    write (' UMA TECLA PARA RECOMEÇAR');
+    readkey;
+    clrscr;
+		jogodavelha; 
+  end;
+  
+								 
+        
+    end;//FIM DO PROCEDIMENTO
+    end;
+    
+    //PROCEDIMENTO MENU
+    procedure menu();
+    var
+    resp:integer;
+    begin
+  
+   textcolor(white);
+      gotoxy(19,3);
+      writeln('     __                 ____ _   __    ____');
+      gotoxy(19,4);
+      writeln(' __ / /__  ___ ____  __/ / /| | / /__ / / /  ___ _');
+      gotoxy(19,5);
+      writeln('/ // / _ \/ _ `/ _ \/_  . __/ |/ / -_) / _ \/ _ `/');
+      gotoxy(19,6);
+      writeln('\___/\___/\_, /\___/_    __/|___/\__/_/_//_/\_,_/');
+      gotoxy(19,7);
+      writeln('         /___/      /_/_/                        ');
+      
+      gotoxy(23,9);
+      writeln('***************************************');
+      gotoxy(23,10);
+      writeln('*            Iniciar Jogo             *');
+      gotoxy(23,11);
+      writeln('*                                     *');
+      gotoxy(23,12);                                 
+      writeln('***************************************');
+      gotoxy (19,25);
+      textcolor (lightcyan);
+      writeln (' Desenvolvimento: Jeferson Conceição /Flávio Lima / Felipe Faustino / Alfredo Victor ');
+      
+      gotoxy(25,16);
+      textcolor (white);
+      write('     PRESSIONE QUALQUER TECLA     ');
+      readkey;
+      
+       gotoxy (25,18);
+       textcolor (lightcyan); 
+      writeln  ('    CARREGANDO      ');
+       gotoxy (25,19);
+       textcolor(lightcyan);
+         write ('#');
+        gotoxy (26,19);
+        delay (700);
+        textcolor(white);
+        write ('#');
+         gotoxy (27,19);
+        delay (700);
+         textcolor(lightcyan);
+        write ('#');
+         gotoxy (28,19);
+        delay (700);
+         textcolor(lightcyan);
+        write ('#');
+         gotoxy (29,19);
+        delay (700);
+          textcolor(white);
+        write ('#');
+        gotoxy (30,19);
+        delay (700);
+         textcolor(lightcyan);
+        write ('#');
+         gotoxy (31,19);
+        delay (700);
+         textcolor(white);
+        write ('#');
+         gotoxy (32,19);
+        delay (700);
+         textcolor(lightcyan);
+        write ('#');
+         gotoxy (33,19);
+        delay (700);
+         textcolor(white);
+        write ('#');
+         gotoxy (34,19);
+        delay (700);
+        textcolor(lightcyan);
+        write ('#');
+         gotoxy (35,19);
+        delay (700);
+         textcolor(white);
+        write ('#');
+         gotoxy (36,19);
+        delay (700);
+        textcolor(lightcyan);
+        write ('#');
+    
+      clrscr;
+     jogodavelha;
+      
+      
+      
+    end;
+    
+      
+
+
+    
+    
+    
+    //PROGRAMA PRINCIPAL
+    
+    
+    var
+    score:integer;
+    score2:integer
+    score3:integer
+    score4:integer
+    score5:integer
+    score6:integer
+    score7:integer
+    begin
+      menu();
+
+
+End.
